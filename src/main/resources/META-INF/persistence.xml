@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+
+    <persistence-unit name="curso-jpa">
+        <properties>
+            <!-- URL DO BANCO DE DADOS -->
+            <property name="javax.persistence.jdbc.url"	value="jdbc:postgresql://systems.m2ra.com:5432/curso-jpa" />
+            <!-- USUÁRIO -->
+            <property name="javax.persistence.jdbc.user" value= />
+            <!-- SENHA -->
+            <property name="javax.persistence.jdbc.password" value= />
+            <!-- DRIVER -->
+            <property name="javax.persistence.jdbc.driver"	value="org.postgresql.Driver" />
+            <!-- DIALETO -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            <!-- SHOW SQL -->
+            <property name="hibernate.show_sql" value="true" />
+            <!-- FORMAT SQL -->
+            <property name="hibernate.format_sql" value="true" />
+            <!-- SCHEMA GENERATION -->
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
+            <!-- CARGA INICIAL -->
+<!--            <property name="javax.persistence.sql-load-script-source" value="scripts/carga-inicial.sql" />-->
+        </properties>
+    </persistence-unit>
+</persistence>
