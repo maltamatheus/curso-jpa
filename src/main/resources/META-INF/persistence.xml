@@ -6,9 +6,9 @@
             <!-- URL DO BANCO DE DADOS -->
             <property name="javax.persistence.jdbc.url"	value="jdbc:postgresql://systems.m2ra.com:5432/curso-jpa" />
             <!-- USUÁRIO -->
-            <property name="javax.persistence.jdbc.user" value= />
+            <property name="javax.persistence.jdbc.user" value=/>
             <!-- SENHA -->
-            <property name="javax.persistence.jdbc.password" value= />
+            <property name="javax.persistence.jdbc.password" value=/>
             <!-- DRIVER -->
             <property name="javax.persistence.jdbc.driver"	value="org.postgresql.Driver" />
             <!-- DIALETO -->

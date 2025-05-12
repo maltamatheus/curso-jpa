@@ -6,8 +6,8 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
-@ToString
+@Getter
+@Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name="tab_nota_fiscal")
 public class NotaFiscal {
@@ -18,12 +18,13 @@ public class NotaFiscal {
     @Setter(AccessLevel.NONE)
     private Integer id;
 
-    //TODO: RELACIONAMENTO ONE TO ONE
-    @Column(name="id_pedido")
-    private Integer idPedido;
+    @OneToOne(optional = false)
+    @JoinColumn(name="id_pedido")
+    private Pedido pedido;
 
+    @Column(name="nota_fiscal", nullable = false)
     private String xml;
 
-    @Column(name="data_emissao")
+    @Column(name="data_emissao", nullable = false)
     private LocalDateTime dataEmissao;
 }

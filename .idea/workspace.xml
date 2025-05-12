@@ -5,38 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f06a6f62-55a6-4e0a-a61f-f4215d874e19" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Categoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Estoque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/ItemPedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/NotaFiscal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/PagamentoBoleto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/PagamentoCartao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Pedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Produto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/embedded/Endereco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/enums/EnumUF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/enums/SexoCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/enums/StatusPagamento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/enums/StatusPedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/util/ExercicioCrudCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/util/IniciandoComPersistencia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/util/PersistenciaDeDadosCliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/util/UploadTabelasObjetos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/scripts/carga-inicial.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/m2ra/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/m2ra/testes/IniciandoComJpa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/m2ra/testes/MapeandoRelacionamentosTestes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/m2ra/util/EntityManagerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/ItemPedidoId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/m2ra/testes/TestesGerais.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Estoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Estoque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/m2ra/model/ItemPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/ItemPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/m2ra/model/NotaFiscal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/NotaFiscal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/m2ra/model/PagamentoBoleto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/PagamentoBoleto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/m2ra/model/PagamentoCartao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/PagamentoCartao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Pedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/model/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/m2ra/util/UploadTabelasObjetos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/m2ra/util/UploadTabelasObjetos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/scripts/carga-inicial.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/scripts/carga-inicial.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/m2ra/testes/MapeandoRelacionamentosTestes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/m2ra/testes/MapeandoRelacionamentosTestes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,6 +58,7 @@
     "JUnit.IniciandoComJpa.inserindoOPrimeiroObjeto.executor": "Run",
     "JUnit.IniciandoComJpa.removendoObjetos.executor": "Run",
     "JUnit.IniciandoComJpa.testeUsandoOFlush.executor": "Run",
+    "JUnit.MapeandoRelacionamentosTestes.criarPedidoComCliente.executor": "Run",
     "JUnit.MapeandoRelacionamentosTestes.criarPedidoComClienteComItemPedidoComProduto.executor": "Debug",
     "JUnit.MapenadoRelacionamentosTestes.criarClientePedido.executor": "Run",
     "JUnit.MapenadoRelacionamentosTestes.criarItemPedidoComProduto.executor": "Run",
@@ -83,6 +68,7 @@
     "JUnit.MapenadoRelacionamentosTestes.iniciandoManyToOne.executor": "Debug",
     "JUnit.MapenadoRelacionamentosTestes.inicindoManyToOne.executor": "Run",
     "JUnit.MapenadoRelacionamentosTestes.manyToOneItemPedidoComPedido.executor": "Run",
+    "JUnit.TestesGerais.testandoCarregamentoEager.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -93,11 +79,14 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.m2ra.model" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.m2ra.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MapeandoRelacionamentosTestes.criarPedidoComClienteComItemPedidoComProduto">
+  <component name="RunManager" selected="Application.UploadTabelasObjetos">
     <configuration name="UploadTabelasObjetos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.m2ra.util.UploadTabelasObjetos" />
       <module name="curso-jpa" />
@@ -159,7 +148,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MapeandoRelacionamentosTestes.criarProdutoPedido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestesGerais.testandoCarregamentoEager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="curso-jpa" />
       <extension name="coverage">
         <pattern>
@@ -168,8 +157,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.m2ra.testes" />
-      <option name="MAIN_CLASS_NAME" value="com.m2ra.testes.MapeandoRelacionamentosTestes" />
-      <option name="METHOD_NAME" value="criarProdutoPedido" />
+      <option name="MAIN_CLASS_NAME" value="com.m2ra.testes.TestesGerais" />
+      <option name="METHOD_NAME" value="testandoCarregamentoEager" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MapeandoRelacionamentosTestes.criarPedidoComClienteComItemPedidoComProduto" />
         <item itemvalue="Application.UploadTabelasObjetos" />
+        <item itemvalue="JUnit.TestesGerais.testandoCarregamentoEager" />
         <item itemvalue="JUnit.MapeandoRelacionamentosTestes.criarPedidoComCliente" />
+        <item itemvalue="JUnit.MapeandoRelacionamentosTestes.criarPedidoComClienteComItemPedidoComProduto" />
         <item itemvalue="JUnit.MapeandoRelacionamentosTestes.criarItemPedidoComProduto" />
-        <item itemvalue="JUnit.MapeandoRelacionamentosTestes.criarProdutoPedido" />
       </list>
     </recent_temporary>
   </component>
@@ -201,12 +190,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/m2ra/testes/MapeandoRelacionamentosTestes.java</url>
-          <line>129</line>
+          <line>131</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/m2ra/testes/MapeandoRelacionamentosTestes.java</url>
-          <line>94</line>
+          <line>96</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -221,17 +210,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/m2ra/testes/MapeandoRelacionamentosTestes.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/m2ra/testes/MapeandoRelacionamentosTestes.java</url>
           <line>21</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/m2ra/testes/MapeandoRelacionamentosTestes.java</url>
-          <line>76</line>
+          <line>78</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

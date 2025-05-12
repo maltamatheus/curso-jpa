@@ -4,12 +4,13 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Objects;
 
-@Data
 @Entity
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@ToString
+@Getter
+@Setter
 @Table(name="tab_produto")
 public class Produto {
 
@@ -24,4 +25,7 @@ public class Produto {
     private BigDecimal preco;
 
     private String descricao;
+
+    @ManyToMany(mappedBy = "produtos")
+    private List<Categoria> categorias;
 }

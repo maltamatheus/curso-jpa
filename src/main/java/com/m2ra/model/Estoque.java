@@ -6,8 +6,8 @@ import lombok.*;
 import java.math.BigDecimal;
 
 @Entity
-@Data
-@ToString
+@Getter
+@Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name="tab_estoque")
 public class Estoque {
@@ -20,8 +20,9 @@ public class Estoque {
     @Setter(AccessLevel.NONE)
     private Integer id;
 
-    @Column(name="id_produto")
-    private Integer idProduto;
+    @OneToOne
+    @JoinColumn(name="id_produto")
+    private Produto produto;
 
     private BigDecimal quantidade;
 }

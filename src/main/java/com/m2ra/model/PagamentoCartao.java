@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Data
-@ToString
+@Getter
+@Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name="tab_pagamento_cartao")
 public class PagamentoCartao {
@@ -17,13 +17,13 @@ public class PagamentoCartao {
     @Setter(AccessLevel.NONE)
     private Integer id;
 
-    //TODO: VER RELAÇÃO ONE TO MANY
-    @Column(name="id_pedido")
-    private Integer idPedido;
+    @OneToOne(optional = false)
+    @JoinColumn(name="id_pedido")
+    private Pedido pedido;
 
     @Enumerated(EnumType.STRING)
     private StatusPagamento status;
 
-    @Column(name="numero_cartao")
+    @Column(name="numero_cartao", nullable = false)
     private String numeroCartao;
 }

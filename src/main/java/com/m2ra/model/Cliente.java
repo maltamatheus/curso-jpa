@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
-//@ToString
+@Getter
+@Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name="tab_cliente")
 public class Cliente {
@@ -21,9 +21,10 @@ public class Cliente {
     @Column
     private Integer id;
 
+    @Column(name="nome", nullable = false)
     private String nome;
 
-    @Column(name="sexo_cliente")
+    @Column(name="sexo_cliente", nullable = false)
     @Enumerated(EnumType.STRING)
     private SexoCliente sexo;
 

@@ -50,13 +50,15 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
     @Test
     public void criarPedidoComCliente(){
 
-        criarClientePedido();
+//        criarClientePedido();
 
         Cliente cliente = entityManager.find(Cliente.class,1);
 
-        Pedido pedido = new Pedido();
+        Pedido pedido = entityManager.find(Pedido.class,1);
 
-        pedido.setCliente(cliente);
+//        pedido.setCliente(cliente);
+
+        pedido.setDataPedido(LocalDateTime.now());
 
         entityManager.getTransaction().begin();
         pedido = entityManager.merge(pedido);
@@ -64,17 +66,17 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
 
         entityManager.clear();
 
-//        Pedido pedidoIns = entityManager.find(Pedido.class,1);
+        Pedido pedidoIns = entityManager.find(Pedido.class,1);
 
-//        System.out.println(pedidoIns);
-
-        System.out.println(pedido);
+        System.out.println(pedidoIns.getId());
+        System.out.println(pedidoIns.getCliente());
+        System.out.println(pedidoIns.getDataPedido());
     }
 
     @Test
     public void criarItemPedidoComProduto(){
 
-        criarProdutoPedido();
+//        criarProdutoPedido();
 
         Produto produto = entityManager.find(Produto.class,1);
 
