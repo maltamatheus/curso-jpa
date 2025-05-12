@@ -20,11 +20,11 @@ public class ItemPedido {
 //    private Integer id;
 
 //    @ManyToOne(optional = false)
-//    @JoinColumn(name="id_pedido")
+//    @JoinColumn(name="id_pedido", insertable = false, updatable = false)
 //    private Pedido pedido;
-
+//
 //    @ManyToOne(optional = false)
-//    @JoinColumn(name="id_produto")
+//    @JoinColumn(name="id_produto", insertable = false, updatable = false)
 //    private Produto produto;
 
     @EqualsAndHashCode.Include

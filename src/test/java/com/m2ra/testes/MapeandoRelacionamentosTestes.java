@@ -1,9 +1,6 @@
 package com.m2ra.testes;
 
-import com.m2ra.model.Cliente;
-import com.m2ra.model.ItemPedido;
-import com.m2ra.model.Pedido;
-import com.m2ra.model.Produto;
+import com.m2ra.model.*;
 import com.m2ra.model.enums.SexoCliente;
 import com.m2ra.model.enums.StatusPedido;
 import com.m2ra.util.EntityManagerTest;
@@ -19,16 +16,20 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
 
         criarPedidoComCliente();
 
-        criarItemPedidoComProduto();
+        criarProduto();
 
-        ItemPedido itemPedido = entityManager.find(ItemPedido.class,1);
+        Produto produto = entityManager.find(Produto.class, 1);
 
-        Pedido pedido = entityManager.find(Pedido.class,1);
+        Pedido pedido = entityManager.find(Pedido.class, 1);
 
-        itemPedido.setPedido(pedido);
+        ItemPedidoId itemPedidoId = new ItemPedidoId();
 
-        pedido.setDataPedido(LocalDateTime.now());
-        pedido.setStatusPedido(StatusPedido.AGUARDANDO);
+        itemPedidoId.setIdPedido(pedido.getId());
+        itemPedidoId.setIdProduto(produto.getId());
+
+        ItemPedido itemPedido = new ItemPedido();
+
+        itemPedido.setQuantidade(10);
 
         entityManager.getTransaction().begin();
         entityManager.merge(itemPedido);
@@ -50,15 +51,17 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
     @Test
     public void criarPedidoComCliente(){
 
-//        criarClientePedido();
+        criarCliente();
 
         Cliente cliente = entityManager.find(Cliente.class,1);
 
-        Pedido pedido = entityManager.find(Pedido.class,1);
+        Pedido pedido = new Pedido();
 
-//        pedido.setCliente(cliente);
+        pedido.setCliente(cliente);
 
         pedido.setDataPedido(LocalDateTime.now());
+
+        pedido.setStatusPedido(StatusPedido.AGUARDANDO);
 
         entityManager.getTransaction().begin();
         pedido = entityManager.merge(pedido);
@@ -68,23 +71,25 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
 
         Pedido pedidoIns = entityManager.find(Pedido.class,1);
 
-        System.out.println(pedidoIns.getId());
-        System.out.println(pedidoIns.getCliente());
-        System.out.println(pedidoIns.getDataPedido());
+        System.out.println("------ Pedido salvo com sucesso ------");
+
+        System.out.println(pedidoIns.getId()       + " - " +
+                           pedidoIns.getCliente()  + " - " +
+                           pedidoIns.getDataPedido());
     }
 
     @Test
     public void criarItemPedidoComProduto(){
 
-//        criarProdutoPedido();
+        criarProduto();
 
         Produto produto = entityManager.find(Produto.class,1);
 
         ItemPedido itemPedido = new ItemPedido();
 
-        itemPedido.setProduto(produto);
+        itemPedido.setIdProduto(produto.getId());
 
-        itemPedido.setQuantidadeItensPedido(new BigDecimal(10));
+        itemPedido.setQuantidade(10);
 
         entityManager.getTransaction().begin();
         entityManager.merge(itemPedido);
@@ -94,10 +99,12 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
 
         ItemPedido itemPedidoIns = entityManager.find(ItemPedido.class,1);
 
-        System.out.println(itemPedidoIns);
+        System.out.println(itemPedidoIns.getIdPedido()   + " - " +
+                           itemPedidoIns.getIdProduto()  + " - " +
+                           itemPedidoIns.getQuantidade() + " - ");
     }
     @Test
-    public void criarClientePedido(){
+    public void criarCliente(){
         Cliente cliente = new Cliente();
         cliente.setNome("Matheus Malta");
         cliente.setSexo(SexoCliente.MASCULINO);
@@ -114,7 +121,7 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
     }
 
     @Test
-    public void criarProdutoPedido(){
+    public void criarProduto(){
         Produto produto = new Produto();
 
         produto.setNome("iPhone 12 Pro Max");
@@ -129,6 +136,5 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
 
         Produto produtoIns = entityManager.find(Produto.class,1);
 
-        System.out.println(produtoIns);
     }
 }
