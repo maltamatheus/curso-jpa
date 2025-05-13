@@ -1,14 +1,13 @@
 package com.m2ra.model;
 
+import com.m2ra.model.embedded.ItemPedidoId;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.math.BigDecimal;
 
 @Entity
 @Getter
 @Setter
-@IdClass(ItemPedidoId.class)
+//@IdClass(ItemPedidoId.class)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name="tab_item_pedido")
 public class ItemPedido {
@@ -19,23 +18,29 @@ public class ItemPedido {
 //    @Setter(AccessLevel.NONE)
 //    private Integer id;
 
-//    @ManyToOne(optional = false)
-//    @JoinColumn(name="id_pedido", insertable = false, updatable = false)
-//    private Pedido pedido;
+    @ManyToOne(optional = false)
+    @JoinColumn(name="id_pedido")
+    @MapsId("idPedido")
+    private Pedido pedido;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name="id_produto")
+    @MapsId("idProduto")
+    private Produto produto;
+
+    //Usado no modo @IdClass
+//    @EqualsAndHashCode.Include
+//    @Id
+//    @Column(name="id_pedido")
+//    private Integer idPedido;
 //
-//    @ManyToOne(optional = false)
-//    @JoinColumn(name="id_produto", insertable = false, updatable = false)
-//    private Produto produto;
+//    @EqualsAndHashCode.Include
+//    @Id
+//    @Column(name="id_produto")
+//    private Integer idProduto;
 
-    @EqualsAndHashCode.Include
-    @Id
-    @Column(name="id_pedido")
-    private Integer idPedido;
-
-    @EqualsAndHashCode.Include
-    @Id
-    @Column(name="id_produto")
-    private Integer idProduto;
+    @EmbeddedId
+    private ItemPedidoId itemPedidoId;
 
     @Column(name="quantidade", nullable = false)
     private Integer quantidade;

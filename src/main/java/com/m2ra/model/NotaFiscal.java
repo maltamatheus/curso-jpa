@@ -14,12 +14,13 @@ public class NotaFiscal {
 
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     private Integer id;
 
     @OneToOne(optional = false)
     @JoinColumn(name="id_pedido")
+    @MapsId
     private Pedido pedido;
 
     @Column(name="nota_fiscal", nullable = false)

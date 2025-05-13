@@ -1,6 +1,7 @@
 package com.m2ra.testes;
 
 import com.m2ra.model.*;
+import com.m2ra.model.embedded.ItemPedidoId;
 import com.m2ra.model.enums.SexoCliente;
 import com.m2ra.model.enums.StatusPedido;
 import com.m2ra.util.EntityManagerTest;
@@ -10,6 +11,31 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class MapeandoRelacionamentosTestes extends EntityManagerTest {
+
+    @Test
+    public void inserirItemPedido(){
+        criarCliente();
+        Cliente cliente = entityManager.find(Cliente.class,1);
+
+        criarProduto();
+        Produto produto = entityManager.find(Produto.class,1);
+
+        Pedido pedido = new Pedido();
+        pedido.setCliente(cliente);
+        pedido.setDataPedido(LocalDateTime.now());
+        pedido.setStatusPedido(StatusPedido.AGUARDANDO);
+
+        ItemPedido itemPedido = new ItemPedido();
+        itemPedido.setItemPedidoId(new ItemPedidoId());
+        itemPedido.setPedido(pedido);
+        itemPedido.setProduto(produto);
+        itemPedido.setQuantidade(10);
+
+        entityManager.getTransaction().begin();
+        entityManager.merge(pedido);
+        entityManager.merge(itemPedido);
+        entityManager.getTransaction().commit();
+    }
 
     @Test
     public void criarPedidoComClienteComItemPedidoComProduto(){
@@ -29,6 +55,13 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
 
         ItemPedido itemPedido = new ItemPedido();
 
+        //Usado no @IdClass
+//        itemPedido.setIdPedido(pedido.getId());
+//        itemPedido.setIdProduto(produto.getId());
+
+        //Usado no EmbeddedId
+        itemPedido.setItemPedidoId(new com.m2ra.model.embedded.ItemPedidoId(pedido.getId(), produto.getId()));
+
         itemPedido.setQuantidade(10);
 
         entityManager.getTransaction().begin();
@@ -37,15 +70,16 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
 
         entityManager.clear();
 
-        ItemPedido itemPedidoIns = entityManager.find(ItemPedido.class,1);
+        ItemPedido itemPedidoIns = entityManager.find(ItemPedido.class, itemPedidoId);
 
-        System.out.println(itemPedidoIns);
+//        System.out.println(itemPedidoIns.getIdPedido() + " - " +
+//                           itemPedidoIns.getIdProduto()  + " - " +
+//                           itemPedidoIns.getQuantidade());
 
-//        entityManager.clear();
-//
-//        Cliente cliente = entityManager.find(Cliente.class,1);
-//
-//        System.out.println(cliente);
+        System.out.println(itemPedidoIns.getItemPedidoId().getIdPedido()   + " - " +
+                           itemPedidoIns.getItemPedidoId().getIdProduto()  + " - " +
+                           itemPedidoIns.getQuantidade());
+
     }
 
     @Test
@@ -87,7 +121,7 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
 
         ItemPedido itemPedido = new ItemPedido();
 
-        itemPedido.setIdProduto(produto.getId());
+//        itemPedido.setIdProduto(produto.getId());
 
         itemPedido.setQuantidade(10);
 
@@ -99,9 +133,9 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
 
         ItemPedido itemPedidoIns = entityManager.find(ItemPedido.class,1);
 
-        System.out.println(itemPedidoIns.getIdPedido()   + " - " +
-                           itemPedidoIns.getIdProduto()  + " - " +
-                           itemPedidoIns.getQuantidade() + " - ");
+//        System.out.println(itemPedidoIns.getIdPedido()   + " - " +
+//                           itemPedidoIns.getIdProduto()  + " - " +
+//                           itemPedidoIns.getQuantidade() + " - ");
     }
     @Test
     public void criarCliente(){
