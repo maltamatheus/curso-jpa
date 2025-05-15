@@ -15,6 +15,7 @@ import java.util.List;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name="tab_pedido")
+//@ToString
 public class Pedido {
 
     @Id

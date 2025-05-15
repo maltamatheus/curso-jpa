@@ -50,7 +50,7 @@ public class Cliente {
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", sexo=" + sexo +
-                ", pedidos=" + pedidos +
+//                ", pedidos=" + pedidos +
                 '}';
     }
 }

@@ -15,7 +15,8 @@ public class NotaFiscal {
     @Id
     @EqualsAndHashCode.Include
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Setter(AccessLevel.NONE)
+//    @Setter(AccessLevel.NONE)
+    @Column(name = "id_pedido")
     private Integer id;
 
     @OneToOne(optional = false)

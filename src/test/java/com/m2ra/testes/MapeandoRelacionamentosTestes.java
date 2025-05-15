@@ -8,22 +8,27 @@ import com.m2ra.util.EntityManagerTest;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatterBuilder;
 
 public class MapeandoRelacionamentosTestes extends EntityManagerTest {
 
     @Test
     public void inserirItemPedido(){
-        criarCliente();
-        Cliente cliente = entityManager.find(Cliente.class,1);
+//        criarCliente();
+        criarPedidoComNotaFiscal();
+//        Cliente cliente = entityManager.find(Cliente.class,1);
 
-        criarProduto();
+//        criarProduto();
         Produto produto = entityManager.find(Produto.class,1);
 
-        Pedido pedido = new Pedido();
-        pedido.setCliente(cliente);
-        pedido.setDataPedido(LocalDateTime.now());
-        pedido.setStatusPedido(StatusPedido.AGUARDANDO);
+//        Pedido pedido = new Pedido();
+        Pedido pedido = entityManager.find(Pedido.class,1);
+//        pedido.setCliente(cliente);
+//        pedido.setDataPedido(LocalDateTime.now());
+//        pedido.setStatusPedido(StatusPedido.AGUARDANDO);
 
         ItemPedido itemPedido = new ItemPedido();
         itemPedido.setItemPedidoId(new ItemPedidoId());
@@ -32,9 +37,42 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
         itemPedido.setQuantidade(10);
 
         entityManager.getTransaction().begin();
-        entityManager.merge(pedido);
-        entityManager.merge(itemPedido);
+//        entityManager.persist(pedido);
+//        entityManager.persist(itemPedido);
+        itemPedido = entityManager.merge(itemPedido);
         entityManager.getTransaction().commit();
+
+        entityManager.clear();
+
+        ItemPedido itemPedidoIns = entityManager.find(ItemPedido.class,1);
+
+        System.out.println("Criado o Pedido: " + itemPedidoIns.getPedido().getId());
+        System.out.println("Cliente: " + itemPedidoIns.getPedido().getCliente().getId() + " - " + itemPedidoIns.getPedido().getCliente().getNome());
+        System.out.println("Nota Fiscal: " + itemPedidoIns.getPedido().getNotaFiscal().getXml());
+        System.out.println("Valor da Nota: R$ " + itemPedidoIns.getProduto().getPreco().multiply(new BigDecimal(itemPedidoIns.getQuantidade())));
+
+    }
+
+    @Test
+    public void criarPedidoComNotaFiscal(){
+        criarProduto();
+        criarPedidoComCliente();
+
+        Pedido pedido = entityManager.find(Pedido.class,1);
+
+        NotaFiscal notaFiscal = new NotaFiscal();
+
+        notaFiscal.setXml("<?xml>");
+        notaFiscal.setDataEmissao(LocalDateTime.now());
+        notaFiscal.setPedido(pedido);
+
+        entityManager.getTransaction().begin();
+//        entityManager.persist(notaFiscal);
+        notaFiscal = entityManager.merge(notaFiscal);
+        entityManager.getTransaction().commit();
+
+        System.out.println("Nota Fiscal " + notaFiscal.getId() + " emitida com sucesso em " + notaFiscal.getDataEmissao() + " para o pedido " + pedido.getId());
+        System.out.println();
     }
 
     @Test
@@ -166,9 +204,9 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
         entityManager.merge(produto);
         entityManager.getTransaction().commit();
 
-        entityManager.clear();
-
-        Produto produtoIns = entityManager.find(Produto.class,1);
+//        entityManager.clear();
+//
+//        Produto produtoIns = entityManager.find(Produto.class,1);
 
     }
 }
