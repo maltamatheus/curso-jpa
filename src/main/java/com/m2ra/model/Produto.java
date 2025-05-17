@@ -28,4 +28,10 @@ public class Produto {
 
     @ManyToMany(mappedBy = "produtos")
     private List<Categoria> categorias;
+
+    @ElementCollection
+    @CollectionTable(name = "tab_tags_produto"
+                    ,joinColumns = @JoinColumn(name="id_produto"))
+    @Column(name="tag_produto")
+    private List<String> tags;
 }
