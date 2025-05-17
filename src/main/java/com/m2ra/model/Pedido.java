@@ -15,7 +15,6 @@ import java.util.List;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name="tab_pedido")
-//@ToString
 public class Pedido {
 
     @Id
@@ -28,8 +27,8 @@ public class Pedido {
     @JoinColumn(name="id_cliente")
     private Cliente cliente;
 
-//    @OneToMany(mappedBy = "pedido")
-//    private List<ItemPedido> itensPedido;
+    @OneToMany(mappedBy = "pedido")
+    private List<ItemPedido> itensPedido;
 
     @Column(name="data_pedido", nullable = false)
     private LocalDateTime dataPedido;

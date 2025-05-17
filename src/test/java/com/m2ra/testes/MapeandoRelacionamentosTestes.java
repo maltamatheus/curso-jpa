@@ -16,6 +16,12 @@ import java.time.format.DateTimeFormatterBuilder;
 public class MapeandoRelacionamentosTestes extends EntityManagerTest {
 
     @Test
+    public void usandoTags(){
+        criarProduto();
+
+    }
+
+    @Test
     public void inserirItemPedido(){
 //        criarCliente();
         criarPedidoComNotaFiscal();
@@ -203,10 +209,5 @@ public class MapeandoRelacionamentosTestes extends EntityManagerTest {
         entityManager.getTransaction().begin();
         entityManager.merge(produto);
         entityManager.getTransaction().commit();
-
-//        entityManager.clear();
-//
-//        Produto produtoIns = entityManager.find(Produto.class,1);
-
     }
 }
